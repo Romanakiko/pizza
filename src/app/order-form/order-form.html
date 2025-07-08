@@ -1,0 +1,33 @@
+<form [formGroup]="orderForm" (ngSubmit)="onSubmit()" class="form">
+    <input
+      type="text"
+      id="name"
+      formControlName="name"
+      placeholder="Ваше имя"
+    >
+
+    <input
+      type="text"
+      id="address"
+      formControlName="address"
+      placeholder="Адрес доставки"
+    >
+
+    <input
+      type="tel"
+      id="phone"
+      formControlName="phone"
+      placeholder="Телефон"
+    >
+
+    <button class="button" [disabled]="orderForm.invalid" (click)="onSubmit()">Оформить заказ</button>
+</form>
+
+@if(confirmationMsg()) {
+  <div class="message_bg" (click)="closeMsg()">
+    <div class="message_container">
+      <span class="material-icons button-close" (click)="closeMsg()">close</span>
+      <p class="message__text">{{confirmationMsg()}}</p>
+    </div>
+  </div>
+}

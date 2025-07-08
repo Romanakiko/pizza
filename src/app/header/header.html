@@ -1,0 +1,22 @@
+<div class="logo">
+<img class="logo__img" src="/logo_pizza.png">
+  <p class="logo__text">PIZZA <br> CHEFF</p>
+</div>
+
+<div class="navigation">
+  <ng-container *ngTemplateOutlet="linksList"></ng-container>
+</div>
+
+<div class="navigation_mobile">
+  <span class="material-icons button-menu" (click)="container.style.display = 'flex'">dehaze</span>
+  <div class="links-container" #container>
+    <span class="material-icons button-close" (click)="container.style.display = 'none'">close</span>
+    <ng-container *ngTemplateOutlet="linksList"></ng-container>
+  </div>
+</div>
+<ng-template #linksList>
+  <a class="navigation__link">Пицца</a>
+  <a class="navigation__link">Напитки</a>
+  <a class="navigation__link">Доставка и оплата</a>
+  <a class="navigation__link">Контакты</a>
+</ng-template>

@@ -1,0 +1,15 @@
+<div class="container" (click)="popup.style.display = 'flex'">
+  <img [src]="pizza()?.image">
+  <p class="title">{{pizza()?.name}}</p>
+  <p class="description">{{pizza()?.description}}</p>
+</div>
+<button class="button">В корзину</button>
+
+  <div class="popup_bg" (click)="popup.style.display = 'none'" #popup>
+    <div class="popup_container">
+      <span class="material-icons button-close" (click)="popup.style.display = 'none'">close</span>
+      <img [src]="pizza()?.image">
+      <p class="title">{{pizza()?.name}}</p>
+      <p class="description">{{pizza()?.description}}</p>
+    </div>
+  </div>
